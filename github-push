@@ -1,0 +1,66 @@
+#!/bin/bash
+newrepository(){
+
+dir=`pwd`
+sleep 2
+
+git init $dir
+
+git add .
+
+echo "type your commit message"
+read commit;
+
+
+git commit -m "$commit"
+
+echo "type the name of repository that you want"
+read name;
+
+git remote add origin https://github.com/usuario/$name
+
+git push -u origin master
+ 
+ }
+
+
+
+onlypush(){
+
+
+dir=`pwd`
+
+sleep 2
+
+git init $dir
+
+git add .
+
+echo "type your commit message"
+read commit;
+
+
+git commit -m "$commit"
+
+
+git push
+}
+
+
+
+echo "git automated push !"
+ 
+ 
+
+choice="new-repository push-only"
+
+select option in $choice; do
+
+	if [ $REPLY=1 ]; then
+	
+		newrepository 
+	else
+		onlypush
+	fi
+done
+
