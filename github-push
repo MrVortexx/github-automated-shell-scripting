@@ -13,11 +13,13 @@ read commit;
 
 
 git commit -m "$commit"
-
-echo "type the name of repository that you want"
+echo "type the name of user"
 read name;
 
-git remote add origin https://github.com/usuario/$name
+echo "type the name of repository"
+read namerepo;
+
+git remote add origin https://github.com/$name/$namerepo
 
 git push -u origin master
  
