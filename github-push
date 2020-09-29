@@ -1,51 +1,51 @@
 #!/bin/bash
-newrepository(){
+newrepository()
+{
 
-dir=`pwd`
-sleep 2
+	dir=`pwd`
+	sleep 2
 
-git init $dir
+	git init $dir
 
-git add .
+	git add .
 
-echo "type your commit message"
-read commit;
+	echo "type your commit message"
+	read commit;
 
 
-git commit -m "$commit"
-echo "type the name of user"
-read name;
+	git commit -m "$commit"
+	echo "type the name of user"
+	read name;
 
-echo "type the name of repository"
-read namerepo;
+	echo "type the name of repository"
+	read namerepo;
 
-git remote add origin https://github.com/$name/$namerepo
+	git remote add origin https://github.com/$name/$namerepo
 
-git push -u origin master
+	git push -u origin master
  
- }
+}
 
 
 
 onlypush(){
 
+	dir=`pwd`
 
-dir=`pwd`
+	sleep 2
 
-sleep 2
+	git init $dir
 
-git init $dir
+	git add .
 
-git add .
-
-echo "type your commit message"
-read commit;
-
-
-git commit -m "$commit"
+	echo "type your commit message"
+	read commit;
 
 
-git push
+	git commit -m "$commit"
+
+
+	git push
 }
 
 
